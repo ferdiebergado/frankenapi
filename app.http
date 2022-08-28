@@ -1,0 +1,28 @@
+@host = http://{{$dotenv HOST}}:{{$dotenv PORT}}
+###
+
+# @name root
+GET {{host}}/
+###
+
+# @name health
+GET {{host}}/health
+###
+
+# @name notfound
+GET {{host}}/notfound
+###
+
+# @name create-user
+POST {{host}}/users
+Content-Type: application/json
+
+{
+    "email": "iwile@ka.si",
+    "password": "mdao3v5qa3"
+}
+###
+
+# @name preflight
+OPTIONS {{host}}
+###
